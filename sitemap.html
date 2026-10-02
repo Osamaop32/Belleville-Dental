@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="shortcut icon" href="images/belleville-dental-favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sitemap | Belleville Dental</title>
+
+    <link rel="stylesheet" href="style.css">
+<style>
+
+
+.sitemap-page {
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.sitemap-page::before,
+.sitemap-page::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.25;
+    animation: sitemapGlow 5s ease-in-out infinite alternate;
+}
+
+.sitemap-page::before {
+    background: var(--primary);
+    top: -120px;
+    left: -100px;
+}
+
+.sitemap-page::after {
+    background: var(--secondary);
+    bottom: -120px;
+    right: -100px;
+}
+
+.sitemap-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 50px;
+    text-align: center;
+    background: var(--bg-card);
+    border: 1px solid var(--primary);
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.15);
+    position: relative;
+    z-index: 2;
+    animation: sitemapFade 1s ease;
+}
+
+
+
+.sitemap-container h1 {
+    margin-bottom: 10px;
+    font-size: 42px;
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--primary);
+}
+
+.sitemap-container h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: var(--text-white);
+}
+
+.sitemap-container p {
+    color: var(--text-light);
+    margin-bottom: 35px;
+}
+
+
+
+.sitemap-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.sitemap-links a {
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text-white);
+    background: var(--bg-section);
+    border: 1px solid rgba(0, 234, 255, 0.35);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sitemap-links a:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.25);
+}
+
+
+
+@keyframes sitemapFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sitemapGlow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .sitemap-container {
+        padding: 35px 20px;
+    }
+
+    .sitemap-container h1 {
+        font-size: 32px;
+    }
+
+    .sitemap-container h2 {
+        font-size: 23px;
+    }
+
+    .sitemap-links {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+   
+
+    <section class="sitemap-page">
+
+        <div class="sitemap-container">
+
+            <h1>Belleville Dental</h1>
+
+            <h2>Website Sitemap</h2>
+
+            <p>
+                Explore the main pages and sections of Belleville Dental.
+            </p>
+
+            <div class="sitemap-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#about">About</a>
+
+                <a href="index.html#services">Services</a>
+
+                <a href="index.html#products">Products</a>
+
+                <a href="index.html#visitors">Visitors</a>
+
+                <a href="index.html#gallery">Gallery</a>
+
+                <a href="index.html#contact">Contact Us</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+

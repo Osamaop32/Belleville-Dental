@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<link rel="shortcut icon" href="images/belleville-dental-favicon.png" type="image/x-icon">
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Belleville Dental</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="bottom-ticker">
+
+        <div class="ticker-track">
+
+            <span>
+                📅 Date:
+                <strong id="currentDate">Loading...</strong>
+            </span>
+
+            <span class="ticker-separator">•</span>
+
+            <span>
+                🕐 Time:
+                <strong id="currentTime">Loading...</strong>
+            </span>
+
+            <span class="ticker-separator">•</span>
+
+            <span>
+                📍 Location:
+                <strong id="userLocation">Detecting location...</strong>
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="authModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content auth-modal">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="authTitle">
+                        Sign In
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                   
+
+                    <form id="loginForm">
+
+                        <div class="auth-input">
+                            <label>Email</label>
+
+                            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                        </div>
+
+
+                        <div class="auth-input">
+                            <label>Password</label>
+
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+
+
+                        <button type="submit" class="auth-submit">
+                            Sign In
+                        </button>
+
+
+                        <p class="auth-switch">
+                            Don't have an account?
+
+                            <a href="#" id="showSignup">
+                                Create Account
+                            </a>
+                        </p>
+
+                    </form>
+
+
+                 
+
+                    <form id="signupForm" style="display: none;">
+
+                        <div class="auth-input">
+                            <label>Full Name</label>
+
+                            <input type="text" id="signupName" placeholder="Enter your name" required>
+                        </div>
+
+
+                        <div class="auth-input">
+                            <label>Email</label>
+
+                            <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                        </div>
+
+
+                        <div class="auth-input">
+                            <label>Password</label>
+
+                            <input type="password" id="signupPassword" placeholder="Create a password" required>
+                        </div>
+
+
+                        <button type="submit" class="auth-submit">
+                            Create Account
+                        </button>
+
+
+                        <p class="auth-switch">
+                            Already have an account?
+
+                            <a href="#" id="showLogin">
+                                Sign In
+                            </a>
+                        </p>
+
+                    </form>
+
+
+                    <p id="authMessage" class="auth-message">
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#home">
+                Belleville Dental
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#professional">
+                            Professional Education
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#patient">
+                            Patient Education
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">
+                            Research
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">
+                            Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#queries">
+                            Queries
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="navbar-right">
+
+
+                    <div class="visitor-counter">
+
+                        <span class="visitor-eye">👁</span>
+
+                        <span class="visitor-text">
+                            Visitors
+                        </span>
+
+                        <strong id="visitorCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="auth-area" id="authArea">
+
+                        <button class="auth-btn" id="signInBtn">
+                            👤 Sign In
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section id="home" class="home-section">
+
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-5 home-content">
+
+                    <p class="home-subtitle">
+                        WELCOME TO BELLEVILLE DENTAL
+                    </p>
+
+                    <h1>
+
+                        Professional Care
+
+                        <span>
+                            For A Brighter Smile
+                        </span>
+
+                    </h1>
+
+                    <p class="home-text">
+
+                        Quality dental care, professional education
+                        and modern solutions for a healthier smile.
+
+                    </p>
+
+                    <div class="home-buttons">
+
+                        <a href="#professional" class="btn-theme">
+
+                            Explore Services
+
+                        </a>
+
+                        <a href="#about" class="btn-outline-theme">
+
+                            Learn More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-7 home-image">
+
+                    <div class="hero-image-box">
+
+                        <img src="images/hero section.png" alt="Belleville Dental" class="img-fluid">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <section id="professional" class="professional-section">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    LEARN • GROW • PRACTICE
+                </p>
+
+                <h2 class="section-title">
+                    Professional <span>Education</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Explore educational resources, learning materials
+                    and professional information designed for dental
+                    students and practitioners.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="education-card">
+
+                        <div class="education-icon">
+                            🎓
+                        </div>
+
+                        <h4>
+                            Related Courses
+                        </h4>
+
+                        <p>
+                            Explore dental courses and professional
+                            learning programs to improve your knowledge
+                            and clinical skills.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            Explore Courses →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="education-card">
+
+                        <div class="education-icon">
+                            📚
+                        </div>
+
+                        <h4>
+                            Help Documents
+                        </h4>
+
+                        <p>
+                            Access useful dental documents, guides and
+                            educational material for learning and
+                            professional practice.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            View Documents →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="education-card">
+
+                        <div class="education-icon">
+                            👨‍⚕️
+                        </div>
+
+                        <h4>
+                            Faculty Resources
+                        </h4>
+
+                        <p>
+                            Teaching resources and professional materials
+                            designed to support dental educators and
+                            faculty members.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            View Resources →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="education-card">
+
+                        <div class="education-icon">
+                            👨‍🎓
+                        </div>
+
+                        <h4>
+                            Student Resources
+                        </h4>
+
+                        <p>
+                            Helpful study materials, dental learning
+                            resources and educational content for
+                            students.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            Start Learning →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="education-card">
+
+                        <div class="education-icon">
+                            🦷
+                        </div>
+
+                        <h4>
+                            Dental Case Studies
+                        </h4>
+
+                        <p>
+                            Learn from practical dental cases and
+                            understand different oral health conditions
+                            and treatment approaches.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            View Case Studies →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <section id="patient" class="patient-section">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    CARE • PREVENT • PROTECT
+                </p>
+
+                <h2 class="section-title">
+                    Patient <span>Education</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Learn about oral health, dental problems and simple
+                    daily habits that can help you maintain a healthy smile.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="education-card patient-card">
+
+                        <div class="education-icon">
+                            🦷
+                        </div>
+
+                        <h4>
+                            Oral Health Basics
+                        </h4>
+
+                        <p>
+                            Learn the basics of oral hygiene and understand
+                            why healthy teeth and gums are important.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            Learn More →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="education-card patient-card">
+
+                        <div class="education-icon">
+                            🪥
+                        </div>
+
+                        <h4>
+                            Brushing & Flossing
+                        </h4>
+
+                        <p>
+                            Discover proper brushing and flossing techniques
+                            for better daily dental care.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            Learn More →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="education-card patient-card">
+
+                        <div class="education-icon">
+                            ⚠️
+                        </div>
+
+                        <h4>
+                            Common Dental Problems
+                        </h4>
+
+                        <p>
+                            Get useful information about cavities, gum
+                            problems, tooth sensitivity and other conditions.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            Learn More →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="education-card patient-card">
+
+                        <div class="education-icon">
+                            🩺
+                        </div>
+
+                        <h4>
+                            Dental Care & Prevention
+                        </h4>
+
+                        <p>
+                            Follow simple preventive care tips and learn
+                            when regular dental checkups are important.
+                        </p>
+
+                        <a href="#" class="education-link">
+                            Learn More →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <section id="research" class="research-section">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    DISCOVER • STUDY • INNOVATE
+                </p>
+
+                <h2 class="section-title">
+                    Dental <span>Research</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Explore dental research, useful documents and
+                    educational media to stay informed about modern
+                    oral healthcare.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="research-card">
+
+                        <div class="research-icon">
+                            🔬
+                        </div>
+
+                        <h4>
+                            Latest Research
+                        </h4>
+
+                        <p>
+                            Explore recent dental research and discover
+                            new developments in oral health and dentistry.
+                        </p>
+
+                        <a href="#" class="research-link">
+                            Read Research →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="research-card">
+
+                        <div class="research-icon">
+                            📄
+                        </div>
+
+                        <h4>
+                            Research Documents
+                        </h4>
+
+                        <p>
+                            Access useful research papers, documents and
+                            educational resources related to dentistry.
+                        </p>
+
+                        <a href="#" class="research-link">
+                            View Documents →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="research-card">
+
+                        <div class="research-icon">
+                            🎥
+                        </div>
+
+                        <h4>
+                            Media Library
+                        </h4>
+
+                        <p>
+                            Watch educational dental videos and explore
+                            media resources created for learning and awareness.
+                        </p>
+
+                        <a href="#" class="research-link">
+                            Open Media →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <section id="products" class="products-section">
+
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    QUALITY • CARE • CHOICE
+                </p>
+
+                <h2 class="section-title">
+                    Dental <span>Products</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Explore our collection of oral-care products and
+                    healthcare items available in different categories.
+
+                </p>
+
+            </div>
+
+
+            <div class="product-filters text-center">
+
+                <button class="product-filter active" data-filter="all">
+                    All
+                </button>
+
+                <button class="product-filter" data-filter="toothpaste">
+                    Toothpaste
+                </button>
+
+                <button class="product-filter" data-filter="toothbrush">
+                    Toothbrushes
+                </button>
+
+                <button class="product-filter" data-filter="kids">
+                    Kids
+                </button>
+
+                <button class="product-filter" data-filter="electrical">
+                    Electrical
+                </button>
+
+                <button class="product-filter" data-filter="tablets">
+                    Tablets
+                </button>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="toothpaste">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/colgate.png.jpeg" alt="Colgate Toothpaste">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Toothpaste
+                            </span>
+
+                            <h4>
+                                Colgate
+                            </h4>
+
+                            <p>
+                                Everyday oral-care toothpaste product.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="toothpaste">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/sensodyne.png.jpeg" alt="Sensodyne Toothpaste">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Toothpaste
+                            </span>
+
+                            <h4>
+                                Sensodyne
+                            </h4>
+
+                            <p>
+                                Oral-care toothpaste product.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="toothpaste">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/max-fresh.png.jpeg" alt="Colgate Max Fresh Toothpaste">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Toothpaste
+                            </span>
+
+                            <h4>
+                                Colgate Max Fresh
+                            </h4>
+
+                            <p>
+                                Fresh-breath focused oral-care product.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="toothpaste">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/closeup.png.jpeg" alt="Closeup Toothpaste">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Toothpaste
+                            </span>
+
+                            <h4>
+                                Closeup
+                            </h4>
+
+                            <p>
+                                Everyday oral-care toothpaste product.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="toothpaste">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/parodontax.png.jpeg" alt="Parodontax Toothpaste">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Toothpaste
+                            </span>
+
+                            <h4>
+                                Parodontax
+                            </h4>
+
+                            <p>
+                                Oral-care toothpaste product.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="toothbrush">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/toothbrush.png.jpeg" alt="Professional Toothbrush">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Toothbrush
+                            </span>
+
+                            <h4>
+                                Professional Toothbrush
+                            </h4>
+
+                            <p>
+                                Comfortable everyday toothbrush for
+                                regular oral hygiene.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="kids">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/kids.png.jpeg" alt="Kids Dental Product">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Kids
+                            </span>
+
+                            <h4>
+                                Kids Dental Care
+                            </h4>
+
+                            <p>
+                                Child-friendly dental-care product.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="electrical">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/electric-toothbrush.png.jpeg" alt="Electric Toothbrush">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Electrical
+                            </span>
+
+                            <h4>
+                                Electric Toothbrush
+                            </h4>
+
+                            <p>
+                                Modern electrical oral-care equipment.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/ansid.png.jpeg" alt="Ansid">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Ansid
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/apranax.png.png" alt="Apranax">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Apranax
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/panadol.png" alt="Panadol">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Panadol
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/synalgo.png" alt="Synalgo">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Synalgo
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/tonoflex-p.png" alt="Tonoflex-P">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Tonoflex-P
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/synflex.png" alt="Synflex">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Synflex
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6 product-item" data-category="tablets">
+
+                    <div class="product-card">
+
+                        <div class="product-image">
+
+                            <img src="images/neoprox-500.png" alt="Neoprox 500">
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                Tablets
+                            </span>
+
+                            <h4>
+                                Neoprox 500
+                            </h4>
+
+                            <p>
+                                Product information and packaging details.
+                            </p>
+
+                            <div class="product-rating">
+                                ★★★★★
+                                <span>(0 Reviews)</span>
+                            </div>
+
+                            <button class="product-btn">
+                                Rate Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <section id="gallery" class="gallery-section">
+
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    OUR • DENTAL • WORLD
+                </p>
+
+                <h2 class="section-title">
+                    Dental <span>Gallery</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Explore our dental environment, professional team
+                    and educational moments.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="gallery-card">
+
+                        <img src="images/Doctor 1.jpeg" alt="Belleville Dental">
+
+                        <div class="gallery-overlay">
+                            <h4>
+                                Our Dental 
+                            </h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="gallery-card">
+
+                        <img src="images/Doctor 2.jpeg" alt="Dental Care">
+
+                        <div class="gallery-overlay">
+                            <h4>
+                                Modern Dental Care
+                            </h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="gallery-card">
+
+                        <img src="images/Doctor 3.jpeg" alt="Dental Professional">
+
+                        <div class="gallery-overlay">
+                            <h4>
+                                Professional Care
+                            </h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <section id="about" class="about-section">
+
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    ABOUT • BELLEVILLE • DENTAL
+                </p>
+
+                <h2 class="section-title">
+                    About <span>Us</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Belleville Dental brings together dental education,
+                    patient awareness, professional resources and
+                    modern oral-care information in one platform.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-lg-6">
+
+                    <div class="about-card">
+
+                        <div class="about-icon">
+                            🦷
+                        </div>
+
+                        <h3>
+                            Our Mission
+                        </h3>
+
+                        <p>
+                            Our goal is to provide useful dental information,
+                            educational resources and simple oral-health
+                            guidance in an easy-to-understand format.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="about-card">
+
+                        <div class="about-icon">
+                            💙
+                        </div>
+
+                        <h3>
+                            Our Approach
+                        </h3>
+
+                        <p>
+                            We focus on education, awareness and modern
+                            dental resources while presenting information
+                            through a clean and user-friendly website.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <section id="queries" class="queries-section">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    ASK • LEARN • UNDERSTAND
+                </p>
+
+                <h2 class="section-title">
+                    Dental <span>Queries</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Have a question? Use the form below to send your
+                    dental-related query.
+
+                </p>
+
+            </div>
+
+
+            <div class="row justify-content-center mt-4">
+
+                <div class="col-lg-8">
+
+                    <div class="query-card">
+
+                        <form>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+
+                                    <label>
+                                        Your Name
+                                    </label>
+
+                                    <input type="text" class="form-control" placeholder="Enter your name">
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <label>
+                                        Email Address
+                                    </label>
+
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+
+                                </div>
+
+
+                                <div class="col-12">
+
+                                    <label>
+                                        Your Query
+                                    </label>
+
+                                    <textarea class="form-control" rows="5"
+                                        placeholder="Write your question here..."></textarea>
+
+                                </div>
+
+
+                                <div class="col-12 text-center">
+
+                                    <button type="submit" class="btn-theme query-btn">
+
+                                        Send Query
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+
+
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <p class="section-subtitle">
+                    CONNECT • CONTACT • VISIT
+                </p>
+
+                <h2 class="section-title">
+                    Contact <span>Us</span>
+                </h2>
+
+                <p class="section-description">
+
+                    Get in touch with Belleville Dental for information,
+                    education and general enquiries.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="contact-card">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <h4>
+                            Location
+                        </h4>
+
+                        <p>
+                            Belleville Dental
+                            <br>
+                            Dental Care Center
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="contact-card">
+
+                        <div class="contact-icon">
+                            📞
+                        </div>
+
+                        <h4>
+                            Phone
+                        </h4>
+
+                        <p>
+                            +92 300 0000000
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="contact-card">
+
+                        <div class="contact-icon">
+                            ✉️
+                        </div>
+
+                        <h4>
+                            Email
+                        </h4>
+
+                        <p>
+                            info@bellevilledental.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+   
+    <footer>
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <div class="col-lg-4">
+
+                    <h5>
+                        Belleville Dental
+                    </h5>
+
+                    <p>
+                        Professional dental education, patient awareness,
+                        research resources and modern oral-care information.
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <h5>
+                        Quick Links
+                    </h5>
+
+                    <p>
+                        <a href="#home">Home</a>
+                    </p>
+
+                    <p>
+                        <a href="#professional">
+                            Professional Education
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="#patient">
+                            Patient Education
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="#products">
+                            Products
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <h5>
+                        Contact
+                    </h5>
+
+                    <p>
+                        📍 Belleville Dental
+                    </p>
+
+                    <p>
+                        📞 +92 300 0000000
+                    </p>
+
+                    <p>
+                        ✉️ info@bellevilledental.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Belleville Dental.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
